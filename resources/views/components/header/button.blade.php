@@ -23,7 +23,7 @@
     </div>
 @else
     <a href="{{ route($linkRoute, ['locale' => $currentLocale]) }}"
-       class="header-button rounded-8 border-main {{ Route::currentRouteName() === $linkRoute ? 'active-button' : '' }}">
+       class="header-button rounded-8 border-main hidden-mobile {{ Route::currentRouteName() === $linkRoute ? 'active-button active' : '' }}">
         {!! $icon !!}
     </a>
 @endif

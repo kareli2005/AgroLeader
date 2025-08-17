@@ -10,3 +10,16 @@ window.setLocale = function (locale) {
         window.location.href = `/lang/${locale}`;
     }
 }
+
+window.openSideBar = function () {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.add('sidebar-active');
+    sidebar.classList.remove('sidebar-hidden');
+}
+
+window.closeSideBar = function () {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.add('sidebar-hidden');
+    sidebar.classList.remove('sidebar-active');
+}
+

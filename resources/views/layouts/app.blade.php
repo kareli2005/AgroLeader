@@ -10,6 +10,7 @@
     @vite(['resources/js/app.js', 'resources/css/app.css'])
 </head>
 <body>
+<x-navigation.sidebar />
 @include('partials.header')
 <main>
     @yield('content')
