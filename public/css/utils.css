@@ -1,0 +1,27 @@
+.rounded-8 {
+    border-radius: 8px;
+}
+
+.border-main {
+    border: solid 2px var(--primary-color);
+}
+
+.hidden {
+    display: none;
+}
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+.text-secondary {
+    color: var(--secondary-color);
+}
+
+.bg-primary {
+    background-color: var(--primary-color);
+}
+
+.bg-secondary {
+    background-color: var(--secondary-color);
+}
