@@ -10,4 +10,5 @@ return [
     'cart' => 'Cart',
     'logout' => 'Logout',
     'login' => 'Login',
+    'new_listings' => 'New Listings',
 ];
