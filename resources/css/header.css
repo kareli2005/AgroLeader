@@ -1,0 +1,117 @@
+header {
+    width: 100%;
+    height: 84px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+}
+
+.header-container {
+    height: 48px;
+    width: 100%;
+    max-width: 1280px;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 64px;
+}
+
+.header-logo {
+    height: 100%;
+    font-weight: bolder;
+    color: var(--primary-color);
+}
+
+.header-logo img {
+    height: 100%;
+    width: auto;
+    user-select: none;
+}
+
+.header-language-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.header-language-container:hover .header-language-switcher {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+.header-language-container:not(:hover) .header-language-switcher {
+    border: solid 2px var(--primary-color);
+    transition-delay: 200ms;
+}
+
+.header-language-switcher {
+    opacity: 0;
+    visibility: hidden;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    position: absolute;
+    top: calc(100% + 4px);
+    right: -2px;
+    width: 48px;
+    background: var(--secondary-color);
+    z-index: 50;
+    overflow: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.header-language-button {
+    font-weight: bolder;
+    border: none;
+    width: 100%;
+    height: 24px;
+}
+
+.header-buttons {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    aspect-ratio: 1/1;
+    color: var(--primary-color);
+}
+
+.header-button:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+
+@media (max-width: 1024px) {
+
+    header {
+        height: 64px;
+    }
+
+    .header-container {
+        height: 36px;
+        gap: 16px;
+        padding: 0 8px;
+    }
+
+    .header-logo {
+        height: 35px;
+    }
+
+}
+
+@media (max-width: 300px) {
+    .header-logo {
+        display: none;
+    }
+}

@@ -1,0 +1,71 @@
+html, body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, div, section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    background: none;
+    color: inherit;
+    line-height: normal;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root {
+    --bg-color: #f2f4f7;
+    --primary-color: #2aa416;
+    --secondary-color: #ffffff;
+    --text-color: #02590a;
+    --primary-color-50: rgba(42, 164, 22, 0.5);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: all 200ms;
+}
+
+
+html {
+    color: var(--text-color);
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 32px 16px;
+    width: 100%;
+    max-width: 1280px;
+    gap: 32px;
+}
+
+@media (max-width: 1024px) {
+    .home-container {
+        padding: 16px 8px;
+        gap: 16px;
+    }
+}

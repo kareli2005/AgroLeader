@@ -3,11 +3,8 @@
 @section('title', 'Home Page')
 @section('content')
 	<div class="home-container">
-		<br/>
-		<x-home.hero/>
-		<br/>
-		<br/>
-		<x-home.items-slider title="new_listings"/>
+		<x-carousel.carousel/>
+		<x-carousel.products title="new_products"/>
 	</div>
 	
 	<!-- Products Grid -->

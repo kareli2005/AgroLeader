@@ -1,29 +1,29 @@
 @props(['icon' => null, 'route' => null])
 
 @php
-    $currentLocale = app()->getLocale();
-    $linkRoute = $route ?? 'home';
-    $locales = config('app.supported_locales');
+	$currentLocale = app()->getLocale();
+	$linkRoute = $route ?? 'home';
+	$locales = config('app.supported_locales');
 @endphp
 
 @if (is_null($route))
-    <div class="header-button language-container rounded-8 border-main">
-        {!! $icon !!}
-        <div class="language-switcher border-main rounded-8">
-            @foreach($locales as $locale)
-                <button
-                    type="button"
-                    class="language-button {{ $currentLocale == $locale ? 'bg-primary text-secondary' : 'bg-secondary text-primary' }}"
-                    onclick="setLocale('{{ $locale }}')"
-                >
-                    {{ strtoupper($locale) }}
-                </button>
-            @endforeach
-        </div>
-    </div>
+	<div class="header-button header-language-container rounded-8 border-main">
+		{!! $icon !!}
+		<div class="header-language-switcher border-main rounded-8">
+			@foreach($locales as $locale)
+				<button
+						type="button"
+						class="header-language-button {{ $currentLocale == $locale ? 'bg-primary text-secondary' : 'bg-secondary text-primary' }}"
+						onclick="setLocale('{{ $locale }}')"
+				>
+					{{ strtoupper($locale) }}
+				</button>
+			@endforeach
+		</div>
+	</div>
 @else
-    <a href="{{ route($linkRoute, ['locale' => $currentLocale]) }}"
-       class="header-button rounded-8 border-main hidden-mobile {{ Route::currentRouteName() === $linkRoute ? 'active-button active' : '' }}">
-        {!! $icon !!}
-    </a>
+	<a href="{{ route($linkRoute, ['locale' => $currentLocale]) }}"
+	   class="header-button rounded-8 border-main hidden-mobile {{ Route::currentRouteName() === $linkRoute ? 'active-button active' : '' }}">
+		{!! $icon !!}
+	</a>
 @endif

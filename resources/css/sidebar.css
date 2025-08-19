@@ -1,0 +1,139 @@
+.sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    background-color: var(--secondary-color);
+    border-right: solid 2px var(--primary-color);
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 300ms;
+    z-index: 50;
+}
+
+.sidebar-head {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 8px;
+}
+
+.sidebar-logo > img {
+    width: 32px;
+    height: 32px;
+}
+
+.sidebar-logo,
+.sidebar-button {
+    height: 48px;
+    width: 48px;
+    border: none;
+    color: var(--primary-color);
+    border-radius: 100%;
+    padding: 8px;
+}
+
+.sidebar-close {
+    color: var(--primary-color);
+    border: none;
+    height: 48px;
+    width: 48px;
+    border-radius: 100%;
+    padding: 8px;
+}
+
+.sidebar-logo:hover,
+.sidebar-close:hover {
+    background-color: var(--bg-color);
+}
+
+.sidebar-close > svg {
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar-search {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 8px;
+}
+
+.sidebar-nav-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: 8px 0;
+}
+
+.sidebar-nav-button {
+    padding: 8px 8px;
+    gap: 8px;
+    width: 100%;
+    height: 36px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-decoration: none;
+    font-size: medium;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.sidebar-nav-button:hover,
+.sidebar-nav-btn-active {
+    padding-left: 32px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+@media (max-width: 1024px) {
+    .sidebar {
+        display: flex;
+    }
+
+    .sidebar-background {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 50;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .sidebar-active {
+        transform: translateX(0);
+    }
+
+    .sidebar-hidden {
+        transform: translateX(-100%);
+    }
+}
+
+@media (max-width: 512px) {
+    .sidebar-search {
+        height: 48px;
+    }
+
+    .sidebar-nav-btn-active {
+        padding-left: 8px;
+    }
+}
+
+@media (max-width: 300px) {
+    .sidebar-search {
+        height: auto;
+    }
+}

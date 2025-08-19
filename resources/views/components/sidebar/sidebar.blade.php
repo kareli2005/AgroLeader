@@ -33,12 +33,13 @@
 	];
 @endphp
 
-<div class="sidebar">
+<div id="sidebarBackground" class="sidebar-background hidden"></div>
+<div id="sidebar" class="sidebar sidebar-hidden">
 	<div class="sidebar-head">
 		<a class="sidebar-logo" href="{{ route('home', ['locale' => $currentLocale]) }}">
 			<img src="{{asset('images/logo-icon.png')}}" alt="logo-icon">
 		</a>
-		<button onclick="closeSideBar()" class="close-button">
+		<button onclick="closeSideBar()" class="sidebar-close">
 			{!! $closeSvg !!}
 		</button>
 	</div>
@@ -46,9 +47,13 @@
 	<div class="sidebar-search">
 		<x-search-bar/>
 	</div>
-	<nav class="navbar-buttons">
+	<nav class="sidebar-nav-buttons">
 		@foreach($navButtons as $navButton)
-			<x-navigation.button :icon=" $navButton['icon']" :label="$navButton['label']" :route="$navButton['route']"/>
+			<a href="{{ route($navButton['route'], ['locale' => $currentLocale]) }}"
+			   class="sidebar-nav-button {{ Route::currentRouteName() === $navButton['route'] ? 'sidebar-nav-btn-active' : '' }}">
+				{!! $navButton['icon'] !!}
+				<p>{{ __('messages.' . $navButton['label']) }}</p>
+			</a>
 		@endforeach
 	</nav>
 </div>
